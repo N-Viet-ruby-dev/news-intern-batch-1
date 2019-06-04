@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 gem "rails", "~> 5.1.6"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
 gem "puma", "~> 3.7"
@@ -17,11 +16,9 @@ gem "slim-rails"
 gem "seed-fu", "~> 2.3"
 gem "draper"
 
-
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
-
 
 group :development, :test do
   gem "capybara", "~> 2.13"
@@ -39,4 +36,4 @@ group :development do
   gem "pry-rails"
 end
 
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]

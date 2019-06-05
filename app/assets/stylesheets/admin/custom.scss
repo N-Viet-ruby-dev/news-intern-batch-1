@@ -1,0 +1,9 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.sidebar .nav-link .nav-icon {
+  font-size: 2rem !important;
+  margin-right: 1.5rem !important;
+}

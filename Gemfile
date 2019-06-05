@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 git_source(:github) do |repo_name|
@@ -15,6 +17,11 @@ gem "rubocop-rspec"
 gem "slim-rails"
 gem "seed-fu", "~> 2.3"
 gem "draper"
+gem "bootstrap-sass", "~> 3.4.1"
+gem "sassc-rails", ">= 2.1.0"
+gem "jquery-rails"
+gem "popper_js", "~> 1.14.5"
+gem "font-awesome-sass", "~> 5.8.1"
 
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "dashboards#home"
+    resources :categories
   end
 
   namespace :author do

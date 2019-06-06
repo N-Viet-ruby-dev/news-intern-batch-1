@@ -27,10 +27,12 @@ gem "font-awesome-sass", "~> 5.8.1"
 gem "ckeditor"
 gem "carrierwave"
 gem "mini_magick"
-
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
+gem "faker", "1.7.3"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
 
 group :development, :test do
   gem "capybara", "~> 2.13"

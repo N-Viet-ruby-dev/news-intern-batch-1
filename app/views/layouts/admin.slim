@@ -4,7 +4,8 @@ html
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     title NewsInternBatch1
     = csrf_meta_tags
-    = stylesheet_link_tag    "admin/application", media: "all", "data-turbolinks-track": "reload"
+    = stylesheet_link_tag "admin/application",
+      media: "all", "data-turbolinks-track": "reload"
     = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
   body
     body.app.header-fixed.sidebar-fixed.aside-menu-fixed.sidebar-lg-show
@@ -14,5 +15,8 @@ html
         main.main
           ol.breadcrumb
             li.breadcrumb-item Home
+          .message style=("width: auto; height: 30px; width: 50%; margin: 0 auto; text-align: center;") 
+            - flash.each do |message_type, message|
+              = content_tag(:div, message, class: "alert alert-#{message_type}")
           = yield
       = render "admin/shared/footer"

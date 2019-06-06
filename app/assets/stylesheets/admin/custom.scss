@@ -7,3 +7,36 @@
   font-size: 2rem !important;
   margin-right: 1.5rem !important;
 }
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  background-color: #20a8d8;
+}
+
+.sidebar .nav-link.active{
+  background-color: #ff7c7c;
+}
+
+.sidebar .nav-link.active .nav-icon{
+  color: #46eda8;
+}
+
+.app-footer{
+  margin-top: 100px;
+}
+
+// =============================Error Message================================
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}

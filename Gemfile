@@ -24,6 +24,9 @@ gem "sassc-rails", ">= 2.1.0"
 gem "jquery-rails"
 gem "popper_js", "~> 1.14.5"
 gem "font-awesome-sass", "~> 5.8.1"
+gem "ckeditor"
+gem "carrierwave"
+gem "mini_magick"
 
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
@@ -33,6 +36,7 @@ group :development, :test do
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
   gem "rspec-rails", "~> 3.8"
+  gem "shoulda-matchers"
 end
 
 group :development do

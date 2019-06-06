@@ -18,5 +18,4 @@
 //= require ./lib/coreui
 //= require ./lib/main
 //= require rails-ujs
-//= require turbolinks
-//= require_tree .
+//= require ckeditor/init

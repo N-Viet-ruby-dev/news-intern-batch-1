@@ -7,4 +7,12 @@ html
     = stylesheet_link_tag    "admin/application", media: "all", "data-turbolinks-track": "reload"
     = javascript_include_tag "admin/application", "data-turbolinks-track": "reload"
   body
-    = yield
+    body.app.header-fixed.sidebar-fixed.aside-menu-fixed.sidebar-lg-show
+      = render "admin/shared/header"
+      .app-body
+        = render "admin/shared/sidebar"
+        main.main
+          ol.breadcrumb
+            li.breadcrumb-item Home
+          = yield
+      = render "admin/shared/footer"

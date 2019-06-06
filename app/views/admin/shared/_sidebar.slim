@@ -6,4 +6,15 @@
           i.nav-icon.fas.fa-tachometer-alt
           |  Dashboard
           span.badge.badge-primary NEW
+      br
+      li.nav-title Article
+      br
+      li.nav-item
+        = link_to author_posts_path, class: "nav-link" do
+          i.nav-icon.fas.fa-copy
+          |  Your Articles
+      li.nav-item
+        = link_to new_author_post_path, class: "nav-link" do
+          i.fas.fa-pencil-alt
+          |  New Article
   button.sidebar-minimizer.brand-minimizer type="button" 

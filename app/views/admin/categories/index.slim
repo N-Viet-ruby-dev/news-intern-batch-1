@@ -6,22 +6,22 @@
       = link_to "New category", new_admin_category_path,
         style: "margin-bottom: 10px; margin-left: 10px;"
     .content.table-full-width
-      table.table.table-striped.table-hover
-        thead
+      table.table.table-responsive-sm.table-hover.table-outline.mb-0
+        thead.thead-light
           tr
-            th ID
+            th.text-center ID
             th Category
-            th Edit
-            th Delete
+            th.text-center Edit
+            th.text-center Delete
         tbody
           - @categories.each do |category|
             tr
-              td= category.id
+              td.text-center= category.id
               td= category.name
-              td
+              td.text-center
                 = link_to edit_admin_category_path(category) do
                   i.fas.fa-tools
-              td
+              td.text-center
                 = link_to admin_category_path(category), method: :delete,
                   data: { confirm: "You are deleting category ! You sure ?" } do
                   i.far.fa-trash-alt style=("color: red;") 

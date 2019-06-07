@@ -2,13 +2,13 @@ tr
   td.text-center
     = post.id
   td
-    = post.category_id
+    = post.category.name
   td
     = post.title
   td.text-center
     | ...
   td.text-center
-    i.fas.fa-info-circle
+    = link_to admin_post_path post
+      i.fas.fa-info-circle
   td.text-center
-    = link_to edit_author_post_path post
-      i.far.fa-edit
+    i.far.fa-edit

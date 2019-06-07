@@ -7,18 +7,22 @@
           |  Dashboard
           span.badge.badge-primary NEW
       br
-      li.nav-title Article
+      li.nav-title Manager Article
       br
+      li.nav-item
+        = link_to admin_categories_path, class: "nav-link" do
+          i.nav-icon.fas.fa-address-book
+          |  Categories
+      li.nav-item
+        = link_to admin_posts_path, class: "nav-link" do
+          i.nav-icon.fas.fa-newspaper
+          |  Articles
       li.nav-item
         = link_to author_posts_path, class: "nav-link" do
           i.nav-icon.fas.fa-copy
           |  Your Articles
       li.nav-item
         = link_to new_author_post_path, class: "nav-link" do
-          i.fas.fa-pencil-alt
+          i.nav-icon.fas.fa-pencil-alt
           |  New Article
-      li.nav-item
-        = link_to admin_categories_path, class: "nav-link" do
-          i.nav-icon.fas.fa-address-book
-          |  Category
   button.sidebar-minimizer.brand-minimizer type="button" 

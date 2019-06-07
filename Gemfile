@@ -33,6 +33,7 @@ gem "jbuilder", "~> 2.5"
 gem "faker", "1.7.3"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
+gem "devise", "~> 4.1"
 
 group :development, :test do
   gem "capybara", "~> 2.13"

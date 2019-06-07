@@ -3,6 +3,7 @@
 module Author
   class PostsController < Author::BasicController
     before_action :load_post, only: %i[edit update]
+    before_action :load_categories, only: %i[new edit]
 
     def index
       @posts = Post.all
@@ -40,6 +41,10 @@ module Author
 
     def load_post
       @post = Post.find params[:id]
+    end
+
+    def load_categories
+      @category_options = Category.pluck :name, :id
     end
   end
 end

@@ -10,18 +10,27 @@ module Admin
 
     def show; end
 
-    def edit; end
-
-    def update; end
+    def update
+      post_update(@post)
+      @post.save!
+      flash.now[:success] = "Publish successfully!"
+      render "index"
+    end
 
     private
 
-    def post_params
+    def admin_post_params
       params.require(:post).permit :content, :active, :public
     end
 
     def load_post
       @post = Post.find params[:id]
+    end
+
+    def post_update(post)
+      post.content = post.content_new
+      post.active = true
+      post.public = true
     end
   end
 end

@@ -25,5 +25,5 @@ $(document).ready(function(){
     $('.message').fadeOut("slow", function(){
       $(this).remove();
     });
-  }, 4500);
+  }, 2000);
 });

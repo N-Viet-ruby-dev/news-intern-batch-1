@@ -16,6 +16,7 @@ module Author
     def create
       @post = Post.new post_params
       if @post.save
+        flash[:success] = "The article was create!"
         redirect_to author_posts_path
       else
         render :new
@@ -26,6 +27,7 @@ module Author
 
     def update
       if @post.update_attributes post_params
+        flash[:info] = "The article was edited!"
         redirect_to author_posts_path
       else
         render :edit

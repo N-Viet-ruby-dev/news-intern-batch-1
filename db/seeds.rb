@@ -1,14 +1,39 @@
-20.times do |n|
-  name = Faker::Name.name
-  Category.create!(name: name)
+10.times do |n|
+  Category.create!(name: Faker::Name.name)
 end
 
-20.times do |n|
+User.create!(
+  name:  Faker::Name.name,
+  birthday: Faker::Date.birthday(18, 65),
+  address: Faker::Address.full_address,
+  email: "user01@email.com",
+  role: "admin",
+  password: "password")
+
+User.create!(
+  name:  Faker::Name.name,
+  birthday: Faker::Date.birthday(18, 65),
+  address: Faker::Address.full_address,
+  email: "user02@email.com",
+  role: "author",
+  password: "password")
+
+10.times do |n|
   User.create!(
     name:  Faker::Name.name,
     birthday: Faker::Date.birthday(18, 65),
     address: Faker::Address.full_address,
-    email: Faker::Internet.email,
-    role:"user",
+    email: "user0#{n+3}@email.com",
+    role:["user", "author"].sample,
     password: "password")
 end
+
+10.times do |n|
+  Post.create!(
+    user_id: "2",
+    title: Faker::Lorem.sentence,
+    header: Faker::Lorem.sentence,
+    content_new: Faker::Lorem.sentences(5),
+    category_id: Category.pluck(:id).sample)
+end
+

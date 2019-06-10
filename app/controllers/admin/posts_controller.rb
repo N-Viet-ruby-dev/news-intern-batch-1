@@ -11,17 +11,12 @@ module Admin
     def show; end
 
     def update
-      post_update(@post)
-      @post.save!
-      flash.now[:success] = "Publish successfully!"
-      render "index"
+      @post.update!(content: @post.content_new, active: true, public: true)
+      flash[:success] = "The article is up to date!"
+      redirect_to admin_posts_path
     end
 
     private
-
-    def admin_post_params
-      params.require(:post).permit :content, :active, :public
-    end
 
     def load_post
       @post = Post.find params[:id]

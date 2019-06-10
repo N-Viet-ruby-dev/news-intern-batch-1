@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   namespace :admin do
     root "dashboards#home"
     resources :categories
-    resources :posts, except: %i[new create]
     resources :users
+    resources :posts, except: %i[new create edit]
   end
 
   namespace :author do

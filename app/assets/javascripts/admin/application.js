@@ -19,3 +19,11 @@
 //= require ./lib/main
 //= require rails-ujs
 //= require ckeditor/init
+
+$(document).ready(function(){
+  setTimeout(function(){
+    $('.message').fadeOut("slow", function(){
+      $(this).remove();
+    });
+  }, 4500);
+});

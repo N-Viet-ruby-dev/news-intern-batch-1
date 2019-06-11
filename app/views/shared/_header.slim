@@ -1,0 +1,80 @@
+body
+  header#header
+    #nav
+      #nav-fixed
+        .container
+          .nav-logo
+            = link_to "#", class: "logo" do
+              - image_tag "logo.png", alt: ""
+          ul.nav-menu.nav.navbar-nav
+            li
+              a href="category.html"  News
+            li
+              a href="category.html"  Popular
+            li.cat-1
+              a href="category.html"  Web Design
+            li.cat-2
+              a href="category.html"  JavaScript
+            li.cat-3
+              a href="category.html"  Css
+            li.cat-4
+              a href="category.html"  Jquery
+          .nav-btns
+            button.aside-btn
+              i.fas.fa-bars
+            button.search-btn
+              i.fas.fa-search
+            .search-form
+              input.search-input name="search" placeholder=("Enter Your Search ...") type="text" /
+              button.search-close
+                i.fa.fa-times
+      #nav-aside
+        .section-row
+          ul.nav-aside-menu
+            li
+              a href="index.html"  Home
+            li
+              a href="about.html"  About Us
+            li
+              a href="#"  Join Us
+            li
+              a href="#"  Advertisement
+            li
+              a href="contact.html"  Contacts
+        .section-row
+          h3 Recent Posts
+          .post.post-widget
+            = link_to "#", class: "post-img" do
+              = image_tag("widget-1.jpg", alt: "aa")
+            .post-body
+              h3.post-title
+                a href="blog-post.html"  Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically
+          .post.post-widget
+            = link_to "#", class: "post-img" do
+              = image_tag("widget-1.jpg", alt: "aa")
+            .post-body
+              h3.post-title
+                a href="blog-post.html"  Why Node.js Is The Coolest Kid On The Backend Development Block!
+          .post.post-widget
+            = link_to "#", class: "post-img" do
+              = image_tag("widget-1.jpg", alt: "aa")
+            .post-body
+              h3.post-title
+                a href="blog-post.html"  Tell-A-Tool: Guide To Web Design And Development Tools
+        .section-row
+          h3 Follow us
+          ul.nav-aside-social
+            li
+              a href="#" 
+                i.fa.fa-facebook
+            li
+              a href="#" 
+                i.fa.fa-twitter
+            li
+              a href="#" 
+                i.fa.fa-google-plus
+            li
+              a href="#" 
+                i.fa.fa-pinterest
+        button.nav-aside-close
+          i.fa.fa-times

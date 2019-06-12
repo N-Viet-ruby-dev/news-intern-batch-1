@@ -13,11 +13,6 @@
  *= require_self
  *= require ./lib/font.css
  *= require ./lib/style.css
+ *= require custom
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import "font-awesome-sprockets";
- @import "font-awesome";
 
-
-// style="display: inline-block;margin: auto;"

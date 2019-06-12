@@ -5,7 +5,7 @@ body
         .container
           .nav-logo
             = link_to "#", class: "logo" do
-              - image_tag "logo.png", alt: ""
+              - image_tag "news.png", alt: ""
           ul.nav-menu.nav.navbar-nav
             li
               a href="category.html"  News
@@ -43,24 +43,7 @@ body
               a href="contact.html"  Contacts
         .section-row
           h3 Recent Posts
-          .post.post-widget
-            = link_to "#", class: "post-img" do
-              = image_tag("widget-1.jpg", alt: "aa")
-            .post-body
-              h3.post-title
-                a href="blog-post.html"  Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically
-          .post.post-widget
-            = link_to "#", class: "post-img" do
-              = image_tag("widget-1.jpg", alt: "aa")
-            .post-body
-              h3.post-title
-                a href="blog-post.html"  Why Node.js Is The Coolest Kid On The Backend Development Block!
-          .post.post-widget
-            = link_to "#", class: "post-img" do
-              = image_tag("widget-1.jpg", alt: "aa")
-            .post-body
-              h3.post-title
-                a href="blog-post.html"  Tell-A-Tool: Guide To Web Design And Development Tools
+          = render partial: "shared/recent_posts", collection: @recent_posts[3..6], as: :post
         .section-row
           h3 Follow us
           ul.nav-aside-social

@@ -1,0 +1,32 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+#recent-post{
+  .post-title a{
+    color: #212631;
+  }
+  .post-img{
+    max-height: 216px;
+    img{
+      max-height: 216px;
+    }
+  }
+}
+
+#nav-fixed {
+  background: linear-gradient(to left, #ffe6e6 -17%, #e6ecff 107%);
+}
+
+.nav-btns .search-form .search-input {
+  background: #ffebdf;
+}
+
+#nav-aside {
+  background: linear-gradient(to right, #33ccff -25%, #ff99cc 114%);
+}
+
+body{
+  background: linear-gradient(to left, #ffffff -10%, #ffe5e5 160%);
+}

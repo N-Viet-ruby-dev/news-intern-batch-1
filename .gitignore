@@ -26,3 +26,4 @@ test/*
 .env
 public/uploads/ckeditor/*
 public/uploads/tmp/*
+public/uploads/post/*

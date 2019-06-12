@@ -12,7 +12,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [750, 750]
 
   def default_url
-    "news.png"
+    "news.jpg"
   end
 
   def extension_whitelist

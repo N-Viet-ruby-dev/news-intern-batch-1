@@ -3,20 +3,31 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-#recent-post{
-  .post-title a{
-    color: #212631;
-  }
-  .post-img{
-    max-height: 216px;
-    img{
-      max-height: 216px;
+#recent-post {
+  .post-title {
+    a {
+      color: #212631;
     }
+    a:hover {
+      color: #7e8f9e;
+    }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .post-title:hover {
+    overflow: visible;
+    white-space: pre-line;
+    width: 10hw;
+  }
+  .post-img {
+    max-height: 175px;
+    overflow: hidden;
   }
 }
 
 #nav-fixed {
-  background: linear-gradient(to left, #ffe6e6 -17%, #e6ecff 107%);
+  background: linear-gradient(to left, #ffe6e6 0%, #ffffff 107%);
 }
 
 .nav-btns .search-form .search-input {
@@ -24,9 +35,28 @@
 }
 
 #nav-aside {
-  background: linear-gradient(to right, #33ccff -25%, #ff99cc 114%);
+  background: linear-gradient(to right, #33ccff -25%, #ff99cc 100%);
 }
 
 body{
   background: linear-gradient(to left, #ffffff -10%, #ffe5e5 160%);
+}
+
+#post-widget {
+  .post-title {
+    a {
+      color: #ffffff;
+    }
+    a:hover {
+      color: #000000;
+    }
+  }
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+a{
+  font-weight: 500;
 }

@@ -2,6 +2,6 @@
 
 class StaticPagesController < ApplicationController
   def index
-    @recent_posts = Post.all.last(6)
+    @recent_posts = Post.all.last(8)
   end
 end

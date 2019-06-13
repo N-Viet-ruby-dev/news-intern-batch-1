@@ -616,7 +616,9 @@ RESPONSIVE
      clear: both;
 }
  .post.post-widget .post-img {
-     width: 90px;
+     max-height: 60px;
+     max-width: 90px;
+     overflow: hidden;
      float: left;
      margin-right: 15px;
 }

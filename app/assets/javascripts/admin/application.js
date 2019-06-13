@@ -16,7 +16,6 @@
 //= require ./lib/pace
 //= require ./lib/perfect-scrollbar
 //= require ./lib/coreui
-//= require ./lib/main
 //= require rails-ujs
 //= require ckeditor/init
 

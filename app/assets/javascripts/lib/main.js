@@ -40,10 +40,11 @@
       }
     }
   });
-
-  $('.nav-aside-close').on('click', function () {
-    $('#nav-aside').removeClass('active');
-    $('#nav').removeClass('shadow-active');
+  $(document).click(function(event) {
+    $('.nav-aside-close').on('click', function () {
+      $('#nav-aside').removeClass('active');
+      $('#nav').removeClass('shadow-active');
+    });
   });
 
   // Sticky Shares

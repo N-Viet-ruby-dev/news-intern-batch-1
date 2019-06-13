@@ -1,0 +1,58 @@
+.section
+  .container
+    .row
+      .col-md-8
+        .row#category-post
+          .col-md-12
+            .post.post-thumb
+              = link_to "#", class: "post-img" do
+                - image_tag(@posts[0].image.url, alt: "")
+              .post-body
+                .post-meta
+                  = link_to category_path(@posts[0].category), class: "post-category cat-#{@posts[0].category.id}" do
+                    = @posts[0].category.name
+                  span.post-date
+                    = @posts[0].updated_at.strftime("%b %d, %Y")
+                h4.post-title
+                  = link_to @posts[0].title, "#"
+          .col-md-6
+            .post
+              = link_to "#", class: "post-img" do
+                - image_tag(@posts[1].image.url, alt: "")
+              .post-body
+                .post-meta
+                  = link_to category_path(@posts[1].category), class: "post-category cat-#{@posts[1].category.id}" do
+                    = @posts[1].category.name
+                  span.post-date
+                    = @posts[1].updated_at.strftime("%b %d, %Y")
+                h4.post-title
+                  = link_to @posts[1].title, "#"
+          .col-md-6
+            .post
+              = link_to "#", class: "post-img" do
+                - image_tag(@posts[2].image.url, alt: "")
+              .post-body
+                .post-meta
+                  = link_to category_path(@posts[2].category), class: "post-category cat-#{@posts[2].category.id}" do
+                    = @posts[2].category.name
+                  span.post-date
+                    = @posts[2].updated_at.strftime("%b %d, %Y")
+                h4.post-title
+                  = link_to @posts[2].title, "#"
+          .clearfix.visible-md.visible-lg
+          .col-md-12
+            .section-row
+              = link_to "#", style: "display: inline-block;margin: auto;" do
+                - image_tag "ad-2.jpg", class: "img-responsive"
+          .col-md-12
+            = render partial: "post", collection: @posts[3..@posts.size], as: :post
+          .col-md-12
+            .section-row
+              button.primary-button.center-block Load More
+      .col-md-4
+        = render "static_pages/advertisement"
+        = render partial: "static_pages/most_read", collection: @posts[0..3], as: :post
+        = render "static_pages/featured_posts"
+        = render "static_pages/categories"
+        = render "static_pages/tags"
+= render "shared/footer"

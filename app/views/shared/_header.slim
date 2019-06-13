@@ -11,15 +11,7 @@ body
               a href="category.html"  News
             li
               a href="category.html"  Popular
-            li.cat-1
-              a href="category.html"  Web Design
-            li.cat-2
-              a href="category.html"  JavaScript
-            li.cat-3
-              a href="category.html"  Css
-            li.cat-4
-              a href="category.html"  Jquery
-            li.cat-5
+            = render partial: "shared/category", collection: categories_list, as: :category
           .nav-btns
             = render "posts/form_posts_search"
             - if user_signed_in?

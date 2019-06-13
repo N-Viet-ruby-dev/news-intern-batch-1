@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
 
   root "static_pages#index"
+  resources :categories
 end

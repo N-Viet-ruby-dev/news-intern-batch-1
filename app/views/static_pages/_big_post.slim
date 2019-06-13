@@ -1,0 +1,11 @@
+.col-md-6#big-post
+  .post
+    = link_to "#", class: "post-img" do
+      = image_tag(post.image.url, alt: "")
+    .post-body
+      .post-meta
+        a.post-category.cat-3 href="category.html"  Jquery
+        span.post-date
+          = post.updated_at.strftime("%b %d, %Y")
+      h3.post-title
+        = link_to post.title, "#"

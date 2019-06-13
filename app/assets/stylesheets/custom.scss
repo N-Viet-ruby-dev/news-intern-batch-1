@@ -23,6 +23,7 @@
   .post-img {
     max-height: 175px;
     overflow: hidden;
+    border-radius: 9px;
   }
 }
 
@@ -35,11 +36,11 @@
 }
 
 #nav-aside {
-  background: linear-gradient(to right, #33ccff -25%, #ff99cc 100%);
+  background: linear-gradient(to right, #44a08d, #093637);
 }
 
 body{
-  background: linear-gradient(to left, #ffffff -10%, #ffe5e5 160%);
+  background: linear-gradient(to left, #ffeeee, #ddefbb);
 }
 
 #post-widget {
@@ -59,4 +60,25 @@ a:-webkit-any-link {
 
 a{
   font-weight: 500;
+}
+
+#big-post {
+  img {
+    border-radius: 9px;
+  }
+  .post-img {
+    max-height: 250px;
+    overflow: hidden;
+  }
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#small-posts {
+  .post-title {
+    margin-top: 0px;
+  }
+  .post-img {
+    border-radius: 9px;
+  }
 }

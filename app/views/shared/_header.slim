@@ -20,14 +20,34 @@ body
             li.cat-4
               a href="category.html"  Jquery
           .nav-btns
-            button.aside-btn
-              i.fas.fa-bars
             button.search-btn
               i.fas.fa-search
             .search-form
               input.search-input name="search" placeholder=("Enter Your Search ...") type="text" /
               button.search-close
                 i.fa.fa-times
+            - if user_signed_in?
+              ul.nav.navbar-nav.ml-auto
+                li.nav-item.dropdown
+                  = link_to image_tag("/assets/8.jpg", alt: "admin", class: "img-avatar", style: "margin-right: 10px; float: right; height: 30px; width: 30px"), "#", class: "nav-link", data:{ toggle: :dropdown }, aria:{ haspopup: true, expanded: false }, role: "button"
+                  .dropdown-menu.dropdown-menu-right
+                    .dropdown-header.text-center
+                      strong Settings
+                    = link_to "#", class: "dropdown-item" do
+                      i.fa.fa-user
+                      | Profile
+                    = link_to "#", class: "dropdown-item" do
+                      i.fa.fa-wrench
+                      | Settings
+                    .dropdown-divider
+                    = link_to destroy_user_session_path, class: "dropdown-item" , method: :delete do
+                      i.fa.fa-lock
+                      | Logout
+            - else
+              .login style=("margin-top: 23px; float: right")
+                = link_to new_user_session_path, class: "dropdown-item" do
+                  i.fas.fa-sign-in-alt
+                  |  Login
       #nav-aside
         .section-row
           ul.nav-aside-menu

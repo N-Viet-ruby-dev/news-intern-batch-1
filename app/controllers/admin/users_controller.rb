@@ -27,7 +27,7 @@ module Admin
     def edit; end
 
     def update
-      if @user.role == "admin"
+      if @user.admin? && @user != current_user
         flash[:danger] = "You can not update this person !"
         redirect_to admin_users_path
       elsif @user.update_attributes(user_params)
@@ -39,7 +39,7 @@ module Admin
     end
 
     def destroy
-      if @user.role == "admin"
+      if @user.admin? && @user != current_user
         flash[:danger] = "You can not delete this person !"
       else
         User.find(params[:id]).destroy

@@ -9,25 +9,26 @@
       br
       li.nav-title Manager Article
       br
-      li.nav-item
-        = link_to admin_categories_path, class: "nav-link" do
-          i.nav-icon.fas.fa-address-book
-          |  Categories
-      li.nav-item
-        = link_to admin_posts_path, class: "nav-link" do
-          i.nav-icon.fas.fa-newspaper
-          |  Articles
-      li.nav-item
-        = link_to author_posts_path, class: "nav-link" do
-          i.nav-icon.fas.fa-copy
-          |  Your Articles
-      li.nav-item
-        = link_to new_author_post_path, class: "nav-link" do
-          i.nav-icon.fas.fa-pencil-alt
-          |  New Article
-      li.nav-item
-        = link_to admin_users_path, class: "nav-link" do
-          i.nav-icon.fas.fa-users-cog
-          |  Users
-      
-  button.sidebar-minimizer.brand-minimizer type="button" 
+      - if current_user.admin?
+        li.nav-item
+          = link_to admin_categories_path, class: "nav-link" do
+            i.nav-icon.fas.fa-address-book
+            |  Categories
+        li.nav-item
+          = link_to admin_posts_path, class: "nav-link" do
+            i.nav-icon.fas.fa-newspaper
+            |  Articles
+        li.nav-item
+          = link_to admin_users_path, class: "nav-link" do
+            i.nav-icon.fas.fa-users-cog
+            |  Users
+      - else
+        li.nav-item
+          = link_to author_posts_path, class: "nav-link" do
+            i.nav-icon.fas.fa-copy
+            |  Your Articles
+        li.nav-item
+          = link_to new_author_post_path, class: "nav-link" do
+            i.nav-icon.fas.fa-pencil-alt
+            |  New Article
+  button.sidebar-minimizer.brand-minimizer type="button"

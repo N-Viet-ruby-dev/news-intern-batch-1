@@ -15,17 +15,6 @@
     lastScrollTop = wScroll
   });
 
-  // Search Nav
-  $(document).click(function(event) {
-    $('.search-btn').on('click', function () {
-      $('.search-form').addClass('active');
-    });
-
-    $('.search-close').on('click', function () {
-      $('.search-form').removeClass('active');
-    });
-  });
-
   // Aside Nav
   $(document).click(function(event) {
     if (!$(event.target).closest($('#nav-aside')).length) {

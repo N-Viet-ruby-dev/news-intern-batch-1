@@ -2,9 +2,9 @@ body
   header#header
     #nav
       #nav-fixed
-        .container
+        .container style=("width: auto;")
           .nav-logo
-            = link_to "#", class: "logo" do
+            = link_to root_path, class: "logo" do
               - image_tag "news.png", alt: ""
           ul.nav-menu.nav.navbar-nav
             li
@@ -19,33 +19,35 @@ body
               a href="category.html"  Css
             li.cat-4
               a href="category.html"  Jquery
+            li.cat-5
           .nav-btns
-            button.search-btn
-              i.fas.fa-search
-            .search-form
-              input.search-input name="search" placeholder=("Enter Your Search ...") type="text" /
-              button.search-close
-                i.fa.fa-times
+            = render "posts/form_posts_search"
             - if user_signed_in?
-              ul.nav.navbar-nav.ml-auto
+              ul.nav.navbar-nav.ml-auto style=("margin-top: -35px; margin-right: 5px; float: right")
                 li.nav-item.dropdown
-                  = link_to image_tag("/assets/8.jpg", alt: "admin", class: "img-avatar", style: "margin-right: 10px; float: right; height: 30px; width: 30px"), "#", class: "nav-link", data:{ toggle: :dropdown }, aria:{ haspopup: true, expanded: false }, role: "button"
-                  .dropdown-menu.dropdown-menu-right
-                    .dropdown-header.text-center
-                      strong Settings
-                    = link_to "#", class: "dropdown-item" do
-                      i.fa.fa-user
-                      | Profile
-                    = link_to "#", class: "dropdown-item" do
-                      i.fa.fa-wrench
-                      | Settings
-                    .dropdown-divider
-                    = link_to destroy_user_session_path, class: "dropdown-item" , method: :delete do
-                      i.fa.fa-lock
-                      | Logout
+                  .dropdown
+                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" 
+                      li= current_user.name
+                    .dropdown-menu aria-labelledby="dropdownMenuButton"
+                    .dropdown-menu.dropdown-menu-right
+                      .dropdown-header.text-center
+                        strong Settings
+                      = link_to "#" , class: "dropdown-item" do
+                        i.fa.fa-user
+                        | Profile
+                      = link_to "#", class: "dropdown-item" do
+                        i.fa.fa-wrench
+                        | Settings
+                      = link_to author_posts_path, class: "dropdown-item" do
+                        i.fa.fa-file-edit
+                        | Article
+                      .dropdown-divider
+                      = link_to destroy_user_session_path, class: "dropdown-item" , method: :delete do
+                        i.fa.fa-lock
+                        | Logout
             - else
-              .login style=("margin-top: 23px; float: right")
-                = link_to new_user_session_path, class: "dropdown-item" do
+              .login style=("margin-top: -29px; margin-right: 20px; float: right")
+                = link_to new_user_session_path do
                   i.fas.fa-sign-in-alt
                   |  Login
       #nav-aside
@@ -61,9 +63,6 @@ body
               a href="#"  Advertisement
             li
               a href="contact.html"  Contacts
-        .section-row
-          h3 Recent Posts
-          = render partial: "shared/recent_posts", collection: @recent_posts[3..6], as: :post
         .section-row
           h3 Follow us
           ul.nav-aside-social

@@ -1,3 +1,16 @@
+GIT
+  remote: git://github.com/ernie/ransack.git
+  revision: 2aed3eacd3a2d7c5b85957e42790e7cd58f9b5e8
+  specs:
+    polyamorous (2.1.1)
+      activerecord (>= 5.0)
+    ransack (2.1.1)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
+      polyamorous (= 2.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -364,6 +377,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 3.7)
   rails (~> 5.1.6)
+  ransack!
   rspec-rails (~> 3.8)
   rubocop
   rubocop-rspec

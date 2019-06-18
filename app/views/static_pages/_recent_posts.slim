@@ -1,6 +1,6 @@
 .col-md-3#recent-post
   .post
-    = link_to "#", class: "post-img" do
+    = link_to post_path(@post), class: "post-img" do
       - image_tag(post.image.url, alt: "")
     .post-body
       .post-meta

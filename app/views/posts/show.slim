@@ -1,0 +1,44 @@
+.section
+  .container
+    .row
+      .col-md-8
+        .section-row.sticky-container
+          .main-post
+            .post.post-thumb
+              a.post-img href="#" 
+                img alt="" src="./img/post-2.jpg" /
+              .post-body
+                .post-meta
+                  a.post-category.cat-3 href="#" = @post.category.name
+                  span.post-date= @post.updated_at
+                h3.post-title
+                  a href="blog-post.html" = @post.title
+            h3
+              = @post.title
+              br/
+            p= @post.header
+            br/
+            p= @post.content
+          = render "static_pages/post_shares"
+        .section-row.text-center
+          a href="#" style=("display: inline-block;margin: auto;") 
+            img.img-responsive alt="" src="./img/ad-2.jpg" /
+      .col-md-4
+        .aside-widget.text-center
+          a href="#" style=("display: inline-block;margin: auto;") 
+            img.img-responsive alt="" src="./img/ad-1.jpg" /
+        = render "static_pages/most_read"
+        = render "static_pages/featured_posts"
+        = render "static_pages/categories"
+        = render "static_pages/tags"
+        .aside-widget
+          .section-title
+            h2 Archive
+          .archive-widget
+            ul
+              li
+                a href="#"  January 2018
+              li
+                a href="#"  Febuary 2018
+              li
+                a href="#"  March 2018

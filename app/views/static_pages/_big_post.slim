@@ -1,12 +1,11 @@
-.col-md-3#recent-post
+.col-md-6#big-post
   .post
     = link_to "#", class: "post-img" do
       - image_tag(post.image.url, alt: "")
     .post-body
       .post-meta
-        = link_to category_path(post.category), class: "post-category cat-#{post.category.id}" do
-          = post.category.name
+        = link_to post.category.name, category_path(post.category), class: "post-category cat-#{post.category.id}"
         span.post-date
           = post.updated_at.strftime("%b %d, %Y")
-      h4.post-title
+      h3.post-title
         = link_to post.title, "#"

@@ -1,5 +1,7 @@
-10.times do |n|
-  Category.create!(name: Faker::Name.name)
+cate = ["World", "Politics", "Business", "Tech", "Science", "Sports", "Arts"]
+
+cate.each do |n|
+  Category.create!(name: n)
 end
 
 User.create!(
@@ -28,7 +30,7 @@ User.create!(
     password: "password")
 end
 
-10.times do |n|
+50.times do |n|
   Post.create!(
     user_id: "2",
     title: Faker::Lorem.sentence,

@@ -9,4 +9,4 @@
         span.post-date
           = post.updated_at.strftime("%b %d, %Y")
       h4.post-title
-        = link_to post.title, "#"
+        = link_to post.title, post_path(post)

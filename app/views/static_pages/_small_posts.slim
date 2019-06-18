@@ -1,7 +1,7 @@
 .col-md-6#small-posts
   .post.post-widget
-    = link_to "#", class: "post-img" do
+    = link_to post_path(post), class: "post-img" do
       - image_tag(post.image.url, alt: "")
     .post-body
       h3.post-title
-        = link_to post.title, "#"
+        = link_to post.title, post_path(post)

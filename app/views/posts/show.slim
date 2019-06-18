@@ -1,0 +1,21 @@
+.section
+  .container
+    .row
+      .col-md-8
+        .section-row.sticky-container
+          .main-post
+            strong
+              h2= @post.title
+            .post-meta
+              h3
+                a.post-category.cat-2= @post.category.name
+              span.post-date= @post.updated_at.strftime("%b %d, %Y")
+            strong
+              p= @post.header
+            p= raw @post.content_new
+          = render "static_pages/post_shares"
+      .col-md-4
+        = render "static_pages/featured_posts"
+        = render "static_pages/categories"
+        = render "static_pages/tags"
+    = render "shared/footer"

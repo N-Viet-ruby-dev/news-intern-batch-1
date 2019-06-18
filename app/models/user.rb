@@ -6,6 +6,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :comments
+
   validates :name, presence: true, length: { maximum: 30 }, uniqueness: true
   enum role: %i[user author admin]
+
+  mount_uploader :avatar, AvatarUploader
 end

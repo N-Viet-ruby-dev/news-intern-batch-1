@@ -5,7 +5,7 @@
         .row#category-post
           .col-md-12
             .post.post-thumb
-              = link_to "#", class: "post-img" do
+              = link_to post_path(@posts[0]), class: "post-img" do
                 - image_tag(@posts[0].image.url, alt: "")
               .post-body
                 .post-meta
@@ -14,10 +14,10 @@
                   span.post-date
                     = @posts[0].updated_at.strftime("%b %d, %Y")
                 h4.post-title
-                  = link_to @posts[0].title, "#"
+                  = link_to @posts[0].title, post_path(@posts[0])
           .col-md-6
             .post
-              = link_to "#", class: "post-img" do
+              = link_to post_path(@posts[1]), class: "post-img" do
                 - image_tag(@posts[1].image.url, alt: "")
               .post-body
                 .post-meta
@@ -26,10 +26,10 @@
                   span.post-date
                     = @posts[1].updated_at.strftime("%b %d, %Y")
                 h4.post-title
-                  = link_to @posts[1].title, "#"
+                  = link_to @posts[1].title, post_path(@posts[1])
           .col-md-6
             .post
-              = link_to "#", class: "post-img" do
+              = link_to post_path(@posts[2]), class: "post-img" do
                 - image_tag(@posts[2].image.url, alt: "")
               .post-body
                 .post-meta
@@ -38,7 +38,7 @@
                   span.post-date
                     = @posts[2].updated_at.strftime("%b %d, %Y")
                 h4.post-title
-                  = link_to @posts[2].title, "#"
+                  = link_to @posts[2].title, post_path(@posts[2])
           .clearfix.visible-md.visible-lg
           .col-md-12
             .section-row

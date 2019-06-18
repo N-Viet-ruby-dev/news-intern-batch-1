@@ -1,5 +1,5 @@
 .post.post-row#recent-post style="margin-bottom: 20px;"
-  = link_to "#", class: "post-img" do
+  = link_to post_path(post), class: "post-img" do
     - image_tag(post.image.url, alt: "")
   .post-body
     .post-meta
@@ -7,4 +7,4 @@
       span.post-date
         = post.updated_at.strftime("%b %d, %Y")
     h3.post-title
-      = link_to post.title, "#"
+      = link_to post.title, post_path(post)

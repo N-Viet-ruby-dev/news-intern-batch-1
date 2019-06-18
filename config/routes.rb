@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :posts
-
   devise_for :users
   mount Ckeditor::Engine => "/ckeditor"
 
@@ -20,4 +18,6 @@ Rails.application.routes.draw do
 
   root "static_pages#index"
   resources :categories
+  resources :posts, only: %i[index show]
+  resources :comments, only: %i[create destroy]
 end

@@ -1,19 +1,22 @@
+#post-header.page-header style="margin-top: 0px;"
+  .background-img style=("background-image: url(#{@post.image.url});") 
+  .container
+    .row
+      .col-md-10
+        .post-meta
+          = link_to @post.category.name, category_path(@post.category), class: "post-category cat-#{@post.category.id}"
+          span.post-date= @post.updated_at.strftime("%b %d, %Y")
+        h1 = @post.header
 .section
   .container
     .row
       .col-md-8
         .section-row.sticky-container
           .main-post
-            strong
-              h2= @post.title
-            .post-meta
-              h3
-                a.post-category.cat-2= @post.category.name
-              span.post-date= @post.updated_at.strftime("%b %d, %Y")
-            strong
-              p= @post.header
-            p= raw @post.content_new
+            = raw @post.content_new
           = render "static_pages/post_shares"
+        #comment-list
+          = render "posts/comments", post: @post, comments: @comments
       .col-md-4
         = render "static_pages/featured_posts"
         = render "static_pages/categories"

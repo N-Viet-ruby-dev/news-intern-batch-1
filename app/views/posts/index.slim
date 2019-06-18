@@ -12,11 +12,11 @@
         - @post_results.each do |post|
             .col-md-4#recent-post
               .post
-                = link_to "#", class: "post-img" do
+                = link_to post_path(post), class: "post-img" do
                   - image_tag(post.image.url, alt: "")
                 .post-body
                   .post-meta
-                    = link_to "#", class: "post-category cat-#{post.category.id}" do
+                    = link_to post_path(post), class: "post-category cat-#{post.category.id}" do
                       = post.category.name
                     span.post-date
                       = post.updated_at.strftime("%b %d, %Y")

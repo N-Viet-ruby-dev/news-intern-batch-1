@@ -5,8 +5,10 @@
       .col-md-10
         .post-meta
           = link_to @post.category.name, category_path(@post.category), class: "post-category cat-#{@post.category.id}"
-          span.post-date= @post.updated_at.strftime("%b %d, %Y")
-        h1 = @post.title
+          span.post-date style="margin-right: 15px;"= @post.updated_at.strftime("%b %d, %Y")
+          strong.post-like
+            = render "post_like", post: @post
+        h1 = @post.header
 .section
   .container
     .row
@@ -14,12 +16,7 @@
         .section-row.sticky-container
           .main-post
             .post-meta
-              h3
-                a.post-category.cat-2= @post.category.name
-              span.post-date= @post.updated_at.strftime("%b %d, %Y")
-            strong
-              p= @post.header
-            p= raw @post.content_new
+            = raw @post.content_new
             br
             h4
               | Tags :
@@ -27,7 +24,9 @@
                 - @post.tag_list.each do |tags|
                   | &ensp;&#35;
                   = tags
-          = render "static_pages/post_shares"
+          .post-shares.sticky-shares
+            - if user_signed_in?
+              = render "posts/share_post", post: @post, reaction: reaction_for(@post)
         #comment-list
           = render "posts/comments", post: @post, comments: @comments
       .col-md-4

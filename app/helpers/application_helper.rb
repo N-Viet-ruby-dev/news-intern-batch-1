@@ -8,4 +8,8 @@ module ApplicationHelper
   def first_name(name)
     name.split.first
   end
+
+  def reaction_for(reactionable)
+    reactionable.reactions.find_or_initialize_by(user_id: current_user.id)
+  end
 end

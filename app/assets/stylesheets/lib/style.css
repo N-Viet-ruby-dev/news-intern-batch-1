@@ -715,7 +715,7 @@ RESPONSIVE
      top: 0;
      left: 0;
 }
- .sticky-shares a {
+ .sticky-shares form {
      display: block;
      margin-bottom: 10px;
      width: 40px;
@@ -729,30 +729,18 @@ RESPONSIVE
      -webkit-transition: 0.2s all;
      transition: 0.2s all;
 }
- .sticky-shares a:hover {
+ .sticky-shares form:hover {
      -webkit-transform: scale(1.3);
      -ms-transform: scale(1.3);
      transform: scale(1.3);
+     border-color: #7F8CB5;
 }
- .sticky-shares a.share-facebook:hover {
-     color: #3b5998;
-     border-color: #3b5998;
+ .sticky-shares form.like-post:hover {
+     border-color: #e62e00;
+     color: #e62e00;
 }
- .sticky-shares a.share-twitter:hover {
-     color: #55acee;
-     border-color: #55acee;
-}
- .sticky-shares a.share-google-plus:hover {
-     color: #dd4b39;
-     border-color: #dd4b39;
-}
- .sticky-shares a.share-pinterest:hover {
-     color: #ff0000;
-     border-color: #ff0000;
-}
- .sticky-shares a.share-linkedin:hover {
-     color: #007bb5;
-     border-color: #007bb5;
+ .sticky-shares form.dislike-post:hover {
+     border-color: #3d3d5c;
 }
 /*----------------------------*\
 	author

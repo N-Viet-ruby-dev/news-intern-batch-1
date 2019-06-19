@@ -11,32 +11,28 @@ body
         = link_to "Dashboard", admin_root_path, class: "nav-link"
     ul.nav.navbar-nav.ml-auto
       li.nav-item.dropdown
-      .dropdown
-        button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" 
-          li= current_user.name
-        .dropdown-menu aria-labelledby="dropdownMenuButton"
-        .dropdown-menu.dropdown-menu-right
-          .dropdown-header.text-center
-            strong Settings
-          - if current_user.author?
-            = link_to author_user_path(current_user) , class: "dropdown-item" do
-              i.fa.fa-user
-              | Profile
-            = link_to edit_author_user_path(current_user), class: "dropdown-item" do
-              i.fa.fa-wrench
-              | Settings
-            .dropdown-divider
-            = link_to destroy_user_session_path, class: "dropdown-item" , method: :delete do
-              i.fa.fa-lock
-              | Logout
-          - else
-            = link_to admin_user_path(current_user), class: "dropdown-item" do
-              i.fa.fa-user
-              | Profile
-            = link_to edit_admin_user_path(current_user), class: "dropdown-item" do
-              i.fa.fa-wrench
-              | Settings
-            .dropdown-divider
-            = link_to destroy_user_session_path, class: "dropdown-item" , method: :delete do
-              i.fa.fa-lock
-              | Logout
+        .dropdown style="float: right;"
+          .dropbtn
+            | Hi, #{first_name(current_user.name)}
+            .dropdown-content
+              - if current_user.author?
+                = link_to author_user_path(current_user) , class: "dropdown-item" do
+                  i.fa.fa-user
+                  | Profile
+                = link_to edit_author_user_path(current_user), class: "dropdown-item" do
+                  i.fa.fa-wrench
+                  | Settings
+                .dropdown-divider
+                = link_to destroy_user_session_path, class: "dropdown-item" , method: :delete do
+                  i.fa.fa-lock
+                  | Logout
+              - else
+                = link_to admin_user_path(current_user), class: "dropdown-item" do
+                  i.fa.fa-user
+                  | Profile
+                = link_to edit_admin_user_path(current_user), class: "dropdown-item" do
+                  i.fa.fa-wrench
+                  | Settings
+                = link_to destroy_user_session_path, class: "dropdown-item" , method: :delete do
+                  i.fa.fa-lock
+                  | Logout

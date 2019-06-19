@@ -10,6 +10,9 @@
         |  ago
       = link_to "Reply", "#", class: "reply", style: "padding-right: 15px;"
       - if comment.user == current_user
-        = link_to "Delete", comment_path(comment), method: :delete, remote: true, class: "reply"
+        = link_to "Delete", comment_path(comment), method: :delete, remote: true, class: "reply", style: "padding-right: 15px;"
+      strong class="count-like-#{ comment.id }"
+        - if user_signed_in?
+          = render "posts/comment_like", comment: comment, reaction: reaction_for(comment)
     p
     = comment.content

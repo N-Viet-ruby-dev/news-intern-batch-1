@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190619064433) do
+ActiveRecord::Schema.define(version: 20190619085536) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(version: 20190619064433) do
     t.datetime "updated_at", null: false
     t.integer "category_id"
     t.string "image"
+  end
+
+  create_table "reactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "action"
+    t.integer "user_id"
+    t.string "reactionable_type"
+    t.integer "reactionable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tag_lists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

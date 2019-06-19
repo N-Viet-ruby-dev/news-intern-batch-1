@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   belongs_to :category
 
   has_many :comments
+  has_many :reactions, as: :reactionable
 
   validates :title, presence: true
   validates :header, presence: true

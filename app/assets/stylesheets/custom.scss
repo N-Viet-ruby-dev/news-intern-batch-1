@@ -16,7 +16,7 @@
 }
 
 body{
-  background: linear-gradient(to right, #4ca1af, #c4e0e5);
+  background-image: linear-gradient(to right, #fff1eb 0%, #ace0f9 100%);
 }
 a:-webkit-any-link {
   text-decoration: none;
@@ -90,4 +90,9 @@ a:hover {
     overflow: hidden;
     border-radius: 5px;
   }
+}
+
+#comments-scroll {
+  overflow: auto;
+  max-height: 500px;
 }

@@ -761,7 +761,7 @@ RESPONSIVE
      padding-right: 40px;
 }
  .post-author .media .media-left .media-object {
-     width:120px;
+     width:50px;
      border-radius: 50%;
 }
  .post-author .author-social {
@@ -802,7 +802,7 @@ RESPONSIVE
      padding-right: 15px;
 }
  .post-comments .media .media-left .media-object {
-     width:70px;
+     width:30px;
      border-radius: 50%;
 }
  .post-comments .media .media-body .media-heading h4 {

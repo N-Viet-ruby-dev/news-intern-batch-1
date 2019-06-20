@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
+  acts_as_taggable
+
   belongs_to :category
 
   has_many :comments

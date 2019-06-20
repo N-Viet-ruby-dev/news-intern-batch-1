@@ -6,14 +6,27 @@
         .post-meta
           = link_to @post.category.name, category_path(@post.category), class: "post-category cat-#{@post.category.id}"
           span.post-date= @post.updated_at.strftime("%b %d, %Y")
-        h1 = @post.header
+        h1 = @post.title
 .section
   .container
     .row
       .col-md-8
         .section-row.sticky-container
           .main-post
-            = raw @post.content_new
+            .post-meta
+              h3
+                a.post-category.cat-2= @post.category.name
+              span.post-date= @post.updated_at.strftime("%b %d, %Y")
+            strong
+              p= @post.header
+            p= raw @post.content_new
+            br
+            h4
+              | Tags :
+              strong
+                - @post.tag_list.each do |tags|
+                  | &ensp;&#35;
+                  = tags
           = render "static_pages/post_shares"
         #comment-list
           = render "posts/comments", post: @post, comments: @comments
@@ -21,4 +34,3 @@
         = render "static_pages/featured_posts"
         = render "static_pages/categories"
         = render "static_pages/tags"
-    = render "shared/footer"

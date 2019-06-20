@@ -1,14 +1,19 @@
-tr
-  td.text-center
-    = post.id
-  td
-    = post.category.name
-  td
-    = post.title
-  td.text-center
-    | ...
-  td.text-center
-    i.fas.fa-info-circle
-  td.text-center
-    = link_to edit_author_post_path post
-      i.far.fa-edit
+- @posts.each do |post|
+  tr
+    td.text-center
+      = post.id
+    td
+      = post.category.name
+    td
+      = post.title
+    td
+      - post.tag_list.each do |tags|
+        | &ensp;&#35;
+        = tags
+    td.text-center
+      | ...
+    td.text-center
+      i.fas.fa-info-circle
+    td.text-center
+      = link_to edit_author_post_path post
+        i.far.fa-edit

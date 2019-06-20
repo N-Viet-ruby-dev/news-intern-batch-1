@@ -35,6 +35,7 @@ gem "kaminari"
 gem "bootstrap-kaminari-views"
 gem "devise", "~> 4.1"
 gem "ransack", git: "git://github.com/ernie/ransack.git"
+gem "acts-as-taggable-on"
 
 group :development, :test do
   gem "capybara", "~> 2.13"

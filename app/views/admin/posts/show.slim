@@ -15,3 +15,9 @@
                 i = @post.category.name
               p
                 = raw @post.content_new
+              h4
+                | Tags :  
+                strong
+                  - @post.tag_list.each do |tags|
+                    | &ensp;&#35;
+                    = tags

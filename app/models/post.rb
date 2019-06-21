@@ -13,6 +13,5 @@ class Post < ApplicationRecord
   validates :content_new, presence: true
   validates :category_id, presence: true
 
-  
   mount_uploader :image, ImageUploader
 end

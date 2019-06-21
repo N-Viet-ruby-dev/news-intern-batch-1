@@ -7,16 +7,16 @@
         h2.text-center= @user.name
         h4
           cite
-            i.fas.fa-map-marked-alt
+            i.fas.fa-map-marked-alt &ensp;
             = @user.address
         p
-          i.glyphicon.glyphicon-envelope
+          i.glyphicon.glyphicon-envelope &ensp;
           = @user.email
           br/
-          i.glyphicon.glyphicon-gift
+          i.glyphicon.glyphicon-gift &ensp;
           = @user.birthday
           br/
-          i.fas.fa-user
+          i.fas.fa-user &ensp;
           = @user.role
         - if !@user.admin?
           .edit= link_to "edit",

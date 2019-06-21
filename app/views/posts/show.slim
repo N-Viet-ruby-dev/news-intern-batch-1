@@ -8,7 +8,7 @@
           span.post-date style="margin-right: 15px;"= @post.updated_at.strftime("%b %d, %Y")
           strong.post-like
             = render "post_like", post: @post
-        h1 = @post.header
+        h1 = @post.title
 .section
   .container
     .row
@@ -21,12 +21,9 @@
             h4
               | Tags :
               strong
-                - @post.tag_list.each do |tags|
+                - @post.tag_list.each do |tag|
                   | &ensp;&#35;
-                  = tags
-          .post-shares.sticky-shares
-            - if user_signed_in?
-              = render "posts/share_post", post: @post, reaction: reaction_for(@post)
+                  = link_to tag, tag_path(tag)
         #comment-list
           = render "posts/comments", post: @post, comments: @comments
       .col-md-4

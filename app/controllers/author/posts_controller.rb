@@ -2,7 +2,7 @@
 
 module Author
   class PostsController < Author::BasicController
-    before_action :load_post, only: %i[edit update show] 
+    before_action :load_post, only: %i[edit update show]
     before_action :load_categories, only: %i[new edit]
 
     def index
@@ -12,8 +12,6 @@ module Author
     def new
       @post = Post.new
     end
-
-    def show; end
 
     def create
       @post = Post.new post_params

@@ -18,9 +18,9 @@ table.table.table-responsive-sm.table-hover.table-outline.mb-0
         td
           = post.title
         td
-          - post.tag_list.each do |tags|
+          - post.tag_list.each do |tag|
             | &ensp;&#35;
-            = link_to tags, tags
+            = link_to tag, author_tag_path(tag)
         td.text-center
           | ...
         td.text-center

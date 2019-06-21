@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   root "static_pages#index"
+  resources :tags, only: :show
   resources :categories
   resources :comments, only: %i[create destroy] do
     resources :reactions

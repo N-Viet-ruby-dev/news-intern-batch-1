@@ -24,6 +24,6 @@ Rails.application.routes.draw do
     resources :reactions
   end
   resources :posts, only: %i[index show] do
-    resources :reactions
+    resources :reactions, only: %i[create update]
   end
 end

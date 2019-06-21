@@ -20,6 +20,8 @@ CKEDITOR.editorConfig = function( config ) {
 
   config.removeButtons = 'Print,NewPage,Source,Templates,Cut,Copy,Paste,SelectAll,Scayt,Form,TextField,Radio,Checkbox,Textarea,Button,ImageButton,HiddenField,BidiLtr,BidiRtl,Language,Anchor,SpecialChar,Iframe,About,Select';
 
+  config.allowedContent = true;
+
   /* Filebrowser routes */
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
   config.filebrowserBrowseUrl = "/ckeditor/attachment_files";

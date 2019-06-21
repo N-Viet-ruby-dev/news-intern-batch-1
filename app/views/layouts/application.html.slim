@@ -7,6 +7,9 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = render "shared/header"
-    = yield
-    = render "shared/footer"
+    - if devise_controller?
+        = yield
+    - else
+        = render "shared/header"
+        = yield
+        = render "shared/footer"

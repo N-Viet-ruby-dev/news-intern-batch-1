@@ -1,0 +1,30 @@
+table.table.table-responsive-sm.table-hover.table-outline.mb-0
+  thead.thead-light
+    tr
+      th.text-center #ID
+      th Category
+      th Headline
+      th Tags
+      th.text-center View
+      th.text-center Show
+      th.text-center Edit
+  tbody
+    - @posts.each do |post|
+      tr
+        td.text-center
+          = post.id
+        td
+          = post.category.name
+        td
+          = post.title
+        td
+          - post.tag_list.each do |tags|
+            | &ensp;&#35;
+            = link_to tags, tags
+        td.text-center
+          | ...
+        td.text-center
+          i.fas.fa-info-circle
+        td.text-center
+          = link_to edit_author_post_path post
+            i.far.fa-edit

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :author do
     resources :posts, except: :destroy
     resources :users, only: %i[show edit update]
+    resources :tags, only: :show
   end
 
   root "static_pages#index"

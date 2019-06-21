@@ -12,6 +12,6 @@
     h4 Leave a reply
     = render "posts/form", post: post
   - else
-    h4
-      | to comment
-    = link_to "Sign in", user_session_path
+    p
+      = link_to "Sign in", user_session_path
+      |  for more feature

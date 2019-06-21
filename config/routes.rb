@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   root "static_pages#index"
   resources :categories
-  resources :posts, only: %i[index show]
-  resources :comments, only: %i[create destroy]
+  resources :comments, only: %i[create destroy] do
+    resources :reactions
+  end
+  resources :posts, only: %i[index show] do
+    resources :reactions
+  end
 end

@@ -17,28 +17,26 @@ body
             - if user_signed_in?
               ul.nav.navbar-nav.ml-auto style=("margin-top: -35px; margin-right: 5px; float: right")
                 li.nav-item.dropdown
-                  .dropdown
-                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" 
-                      li
-                      | Hi, 
-                      strong
-                        = first_name(current_user.name)
-                    .dropdown-menu aria-labelledby="dropdownMenuButton"
-                    .dropdown-menu.dropdown-menu-right
-                      .dropdown-header.text-center
-                        strong Settings
+                  .dropdown style="float: right;"
+                    button.dropbtn
+                    | Hi, #{first_name(current_user.name)}
+                    .dropdown-content
                       = link_to "#" , class: "dropdown-item" do
-                        i.fa.fa-user
+                        i.fa.fa-user style="margin-right: 22px; color: #597BAB"
                         | Profile
                       = link_to "#", class: "dropdown-item" do
-                        i.fa.fa-wrench
+                        i.fa.fa-wrench style="margin-right: 20px; color: #597BAB"
                         | Settings
-                      = link_to author_posts_path, class: "dropdown-item" do
-                        i.fa.fa-file-edit
-                        | Article
-                      .dropdown-divider
+                      - if current_user.admin?
+                        = link_to admin_posts_path, class: "dropdown-item" do
+                          i.fas.fa-user-shield style="margin-right: 20px; color: #597BAB"
+                          | Admin
+                      - if current_user.author?
+                        = link_to author_posts_path, class: "dropdown-item" do
+                          i.fas.fa-user-edit style="margin-right: 20px; color: #597BAB"
+                          | Article
                       = link_to destroy_user_session_path, class: "dropdown-item" , method: :delete do
-                        i.fa.fa-lock
+                        i.fa.fa-lock style="margin-right: 24px; color: #597BAB"
                         | Logout
             - else
               .login style=("margin-top: -29px; margin-right: 20px; float: right")

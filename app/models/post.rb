@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   belongs_to :category
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :reactions, as: :reactionable
 
   validates :title, presence: true

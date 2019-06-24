@@ -21,7 +21,7 @@
                     span.post-date
                       = post.updated_at.strftime("%b %d, %Y")
                   h3.post-title
-                    = link_to truncate(post.title, length: 55), "#"
+                    = link_to truncate(post.title, length: 55), post_path(post)
       .center style=("margin: 0 auto; width: 50%")
         = paginate @post_results, theme: "twitter-bootstrap-3"
       = render "shared/footer"

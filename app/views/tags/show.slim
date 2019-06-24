@@ -1,0 +1,17 @@
+.session
+  .container
+    .row style="margin-top: 30px;"
+      br/
+      - @posts.each do |post|
+        .col-md-4
+          .post
+            = link_to post_path(post), class: "post-img" do
+              - image_tag(post.image.url, alt: "", style:("width: 350px; height: 220px;"))
+            .post-body
+              .post-meta
+                = link_to post_path(post), class: "post-category cat-#{post.category.id}" do
+                  = post.category.name
+                span.post-date
+                  = post.updated_at.strftime("%b %d, %Y")
+              h3.post-title
+                = link_to truncate(post.title, length: 50), post_path(post)

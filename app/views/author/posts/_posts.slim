@@ -7,9 +7,9 @@
     td
       = post.title
     td
-      - post.tag_list.each do |tags|
+      - post.tag_list.each do |tag|
         | &ensp;&#35;
-        = tags
+        = link_to tag, author_tag_path(tag)
     td.text-center
       | ...
     td.text-center

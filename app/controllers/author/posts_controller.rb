@@ -2,7 +2,7 @@
 
 module Author
   class PostsController < Author::BasicController
-    before_action :load_post, only: %i[edit update]
+    before_action :load_post, only: %i[edit update show]
     before_action :load_categories, only: %i[new edit]
 
     def index

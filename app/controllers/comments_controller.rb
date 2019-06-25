@@ -3,11 +3,12 @@
 class CommentsController < ApplicationController
   before_action :load_post, except: :destroy
   before_action :user_comment, only: :destroy
+  before_action :user_signed_in?
 
   def create
     @comment = @post.comments.build comment_params
     @comment.save
-    @comments = @post.comments
+    @comments = @post.comments.where(parent_id: nil)
     respond_to do |format|
       format.html { redirect_to post_path(@post) }
       format.js
@@ -17,7 +18,7 @@ class CommentsController < ApplicationController
   def destroy
     @post = @comment.post
     @comment.destroy
-    @comments = @post.comments
+    @comments = @post.comments.where(parent_id: nil)
     respond_to do |format|
       format.html { redirect_to request.referrer }
       format.js
@@ -27,7 +28,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit :content, :user_id, :post_id
+    params.require(:comment).permit :content, :user_id, :post_id, :parent_id
   end
 
   def load_post

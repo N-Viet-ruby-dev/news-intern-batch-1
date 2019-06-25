@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
+  is_impressionable
   acts_as_taggable
 
   belongs_to :category

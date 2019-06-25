@@ -6,7 +6,7 @@
           .col-md-12
             .post.post-thumb
               = link_to post_path(@posts[0]), class: "post-img" do
-                - image_tag(@posts[0].image.url, alt: "")
+                = image_tag(@posts[0].image.url, alt: "")
               .post-body
                 .post-meta
                   = link_to category_path(@posts[0].category), class: "post-category cat-#{@posts[0].category.id}" do
@@ -18,7 +18,7 @@
           .col-md-6
             .post
               = link_to post_path(@posts[1]), class: "post-img" do
-                - image_tag(@posts[1].image.url, alt: "")
+                = image_tag(@posts[1].image.url, alt: "")
               .post-body
                 .post-meta
                   = link_to category_path(@posts[1].category), class: "post-category cat-#{@posts[1].category.id}" do
@@ -30,7 +30,7 @@
           .col-md-6
             .post
               = link_to post_path(@posts[2]), class: "post-img" do
-                - image_tag(@posts[2].image.url, alt: "")
+                = image_tag(@posts[2].image.url, alt: "")
               .post-body
                 .post-meta
                   = link_to category_path(@posts[2].category), class: "post-category cat-#{@posts[2].category.id}" do
@@ -46,13 +46,9 @@
                 - image_tag "ad-2.jpg", class: "img-responsive"
           .col-md-12
             = render partial: "post", collection: @posts[3..@posts.size], as: :post
-          .col-md-12
-            .section-row
-              button.primary-button.center-block Load More
       .col-md-4
         = render "static_pages/advertisement"
-        = render partial: "static_pages/most_read", collection: @posts[0..3], as: :post
-        = render "static_pages/featured_posts"
+        = render partial: "static_pages/most_read"
+        = render "static_pages/featured_posts", post_1: @featured_post_1, post_2: @featured_post_2
         = render "static_pages/categories"
-        = render "static_pages/tags"
-= render "shared/footer"
+        = render "static_pages/tags", tags: @tags

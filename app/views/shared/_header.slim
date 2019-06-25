@@ -14,7 +14,7 @@ body
               ul.nav.navbar-nav.ml-auto style=("margin-top: -30px; margin-right: 5px; float: right")
                 li.nav-item.dropdown
                   .dropdown style="float: right;"
-                    button.dropbtn
+                    button.dropbtn style="display: none;"
                     | Hi, #{first_name(current_user.name)}
                     .dropdown-content
                       = link_to "#" , class: "dropdown-item" do

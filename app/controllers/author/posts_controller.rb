@@ -38,7 +38,7 @@ module Author
 
     def post_params
       params.require(:post).permit :user_id, :title, :header, :content_new,
-                                   :public, :category_id, :image, :tag_list
+                                   :public, :category_id, :image, :tag_list, :video
     end
 
     def load_post

@@ -1,5 +1,8 @@
 #post-header.page-header style="margin-top: 0px;"
-  .background-img style=("background-image: url(#{@post.image.url});") 
+  - if @post.image.url == "news.jpg"
+    .background-img style=("background-image: url(#{image_url 'news.jpg'});")
+  - else
+    .background-img style=("background-image: url(#{@post.image.url});")
   .container
     .row
       .col-md-10
@@ -16,14 +19,19 @@
         .section-row.sticky-container
           .main-post
             .post-meta
+            - if @post.video.present?
+              = video_tag @post.video_url.to_s, controls: true
             = raw @post.content_new
             br
-            h4
-              | Tags :
-              strong
-                - @post.tag_list.each do |tag|
-                  | &ensp;&#35;
-                  = link_to tag, tag_path(tag)
+            .aside-widget
+              .tags-widget
+                ul
+                  - @post.tag_list.each do |tag|
+                    li
+                      = link_to tag, tag_path(tag)
+            .post-shares.sticky-shares
+              - if user_signed_in?
+                = render "posts/share_post", post: @post, reaction: reaction_for(@post)
         #comment-list
           = render "posts/comments", post: @post, comments: @comments
       .col-md-4

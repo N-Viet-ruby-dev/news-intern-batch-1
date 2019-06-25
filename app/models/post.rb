@@ -14,4 +14,5 @@ class Post < ApplicationRecord
   validates :category_id, presence: true
 
   mount_uploader :image, ImageUploader
+  mount_uploader :video, VideoUploader
 end

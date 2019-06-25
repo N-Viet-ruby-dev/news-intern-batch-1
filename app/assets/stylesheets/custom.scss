@@ -15,17 +15,19 @@
   background: linear-gradient(to right, #44a08d, #093637);
 }
 
-body{
+body {
   background-image: linear-gradient(to right, #fff1eb 0%, #ace0f9 100%);
 }
+
 a:-webkit-any-link {
   text-decoration: none;
 }
 
-a{
+a {
   font-weight: 500;
   color: #212631;
 }
+
 a:hover {
   color: #7e8f9e;
 }
@@ -33,6 +35,7 @@ a:hover {
 .nav-logo .logo {
   line-height: 50px;
 }
+
 // ===================================================================
 
 #recent-post {
@@ -42,11 +45,13 @@ a:hover {
     white-space: nowrap;
     font-size: 14px;
   }
+
   .post-title:hover {
     overflow: visible;
     white-space: pre-line;
     width: 10hw;
   }
+
   .post-img {
     max-height: 175px;
     overflow: hidden;
@@ -58,13 +63,16 @@ a:hover {
   .post-title {
     font-size: 16px;
   }
+
   img {
     border-radius: 5px;
   }
+
   .post-img {
     max-height: 250px;
     overflow: hidden;
   }
+
   padding-left: 0px;
   padding-right: 0px;
 }
@@ -74,9 +82,11 @@ a:hover {
     margin-top: 0px;
     font-size: 14px;
   }
+
   .post-img {
     border-radius: 5px;
   }
+
   .post {
     margin-bottom: 8px;
   }
@@ -86,6 +96,7 @@ a:hover {
   .post-title {
     font-size: 14px;
   }
+
   .post-img {
     overflow: hidden;
     border-radius: 5px;
@@ -101,6 +112,11 @@ a:hover {
 .button_to div {
   display: inline;
 }
+
+.post-like {
+  color: white;
+}
+
 // ========================= Dropdown Button ==============================
 
 .dropbtn {
@@ -123,7 +139,7 @@ a:hover {
   right: 0;
   background-color: #f9f9f9;
   min-width: 150px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -134,5 +150,10 @@ a:hover {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

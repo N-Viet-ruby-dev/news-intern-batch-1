@@ -7,5 +7,7 @@
         = link_to post.category.name, category_path(post.category), class: "post-category cat-#{post.category.id}"
         span.post-date
           = post.updated_at.strftime("%b %d, %Y")
+          - if post.video.present?
+            i.fas.fa-video
       h3.post-title
         = link_to post.title, post_path(post)

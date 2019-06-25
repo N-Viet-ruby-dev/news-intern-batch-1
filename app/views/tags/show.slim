@@ -1,7 +1,12 @@
 .session
   .container
     .row style="margin-top: 30px;"
-      br/
+      .section-title style="padding-left: 15px;"
+        .aside-widget
+          .tags-widget
+            ul
+              li
+                = link_to params[:id], tag_path(params[:id])
       - @posts.each do |post|
         .col-md-4
           .post
@@ -9,7 +14,7 @@
               - image_tag(post.image.url, alt: "", style:("width: 350px; height: 220px;"))
             .post-body
               .post-meta
-                = link_to post_path(post), class: "post-category cat-#{post.category.id}" do
+                = link_to category_path(post.category), class: "post-category cat-#{post.category.id}" do
                   = post.category.name
                 span.post-date
                   = post.updated_at.strftime("%b %d, %Y")

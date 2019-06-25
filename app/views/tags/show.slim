@@ -4,9 +4,13 @@
       .section-title style="padding-left: 15px;"
         .aside-widget
           .tags-widget
-            ul
-              li
-                = link_to params[:id], tag_path(params[:id])
+            .tag style= "width: 50px; float: left; margin-top: -4px;"
+              h4
+                | Tag :
+            .tags
+              ul style="margin-left: 50px;"
+                li
+                  = link_to params[:id], tag_path(params[:id])
       - @posts.each do |post|
         .col-md-3#recent-post
           .post

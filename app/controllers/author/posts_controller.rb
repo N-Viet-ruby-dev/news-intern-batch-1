@@ -6,7 +6,7 @@ module Author
     before_action :load_categories, only: %i[new edit]
 
     def index
-      @posts = Post.all
+      @posts = Post.all.page(params[:page]).per(10)
     end
 
     def new

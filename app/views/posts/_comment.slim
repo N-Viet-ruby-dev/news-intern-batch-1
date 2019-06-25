@@ -16,7 +16,6 @@
           = render "posts/comment_like", comment: comment, reaction: reaction_for(comment)
     p
     = comment.content
-
     - if user_signed_in?
       .collapse id="reply-#{ comment.id }"
         = form_for Comment.new, remote: true do |f|

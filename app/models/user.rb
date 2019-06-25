@@ -7,7 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :comments
-
+  has_many :posts
+  
   validates :name, presence: true, length: { maximum: 30 }, uniqueness: true
   enum role: %i[user author admin]
 

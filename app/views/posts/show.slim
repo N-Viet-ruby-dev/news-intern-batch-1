@@ -23,12 +23,20 @@
               = video_tag @post.video_url.to_s, controls: true
             = raw @post.content
             br
+            h4
+              | Author :&ensp;
+              = @post.user.name
+            br
             .aside-widget
               .tags-widget
-                ul
-                  - @post.tag_list.each do |tag|
-                    li
-                      = link_to tag, tag_path(tag)
+                .tag style= "width: 50px; float: left; margin-top: -4px;"
+                  h4
+                    | Tags :
+                .tags
+                  ul style="margin-left: 50px;"
+                    - @post.tag_list.each do |tag|
+                      li
+                        = link_to tag, tag_path(tag)
             .post-shares.sticky-shares
               - if user_signed_in?
                 = render "posts/share_post", post: @post, reaction: reaction_for(@post)

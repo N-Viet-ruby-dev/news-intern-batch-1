@@ -1,5 +1,6 @@
-class VideoUploader < CarrierWave::Uploader::Base
+# frozen_string_literal: true
 
+class VideoUploader < CarrierWave::Uploader::Base
   storage :file
 
   def store_dir
@@ -7,7 +8,6 @@ class VideoUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    %w(mp4 avi mov flv wmv)
+    %w[mp4 avi mov flv wmv]
   end
-
 end

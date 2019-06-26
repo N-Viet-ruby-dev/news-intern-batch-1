@@ -2,6 +2,6 @@
 
 class TagsController < ApplicationController
   def show
-    @posts = Post.tagged_with(params[:id])
+    @posts = Post.where(active: true).tagged_with(params[:id])
   end
 end

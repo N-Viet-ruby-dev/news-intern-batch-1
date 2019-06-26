@@ -4,19 +4,34 @@
 @import "font-awesome";
 
 #nav-fixed {
-  background: linear-gradient(to left, #ffe6e6 0%, #ffffff 107%);
+  background: linear-gradient(130deg, rgba(34,193,195,1) 0%, rgba(253,177,45,1) 110%);
 }
 
 .nav-btns .search-form .search-input {
   background: #ffebdf;
 }
 
-#nav-aside {
-  background: linear-gradient(to right, #44a08d, #093637);
+body {
+  background-color: #f3f7ed;
 }
 
-body {
-  background-image: linear-gradient(to right, #fff1eb 0%, #ace0f9 100%);
+footer {
+  background: linear-gradient(130deg, rgba(34,193,195,1) -10%, rgba(253,177,45,1) 100%);
+}
+
+#footer {
+  padding-bottom: 10px;
+  .container {
+    padding-top: 20px;
+    border-top: 0px;
+  }
+}
+
+.footer-copyright {
+  color: white;
+  a {
+    color: white;
+  }
 }
 
 a:-webkit-any-link {
@@ -41,8 +56,6 @@ a:hover {
 #recent-post {
   .post-title {
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     font-size: 14px;
   }
 
@@ -56,6 +69,7 @@ a:hover {
     max-height: 175px;
     overflow: hidden;
     border-radius: 5px;
+    height: 175px;
   }
 }
 
@@ -117,6 +131,14 @@ a:hover {
   color: white;
 }
 
+a.post-img:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+a.post-img {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
 // ========================= Dropdown Button ==============================
 
 .dropbtn {
@@ -156,4 +178,23 @@ a:hover {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+// =================== Comments ===========================================
+
+.collapse
+textarea.form-control {
+  margin-left: 5px;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  margin-top: 5px;
+  width: 98%
+}
+
+// ========================= Pagination ===================================
+
+.pagination {
+  float: right;
 }

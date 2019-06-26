@@ -7,4 +7,8 @@ class Comment < ApplicationRecord
   has_many :reactions, as: :reactionable
 
   validates :content, presence: true
+
+  def children
+    post.comments.where(parent_id: id)
+  end
 end

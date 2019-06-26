@@ -1,6 +1,6 @@
 .post.post-row#recent-post style="margin-bottom: 20px;"
   = link_to post_path(post), class: "post-img" do
-    - image_tag(post.image.url, alt: "")
+    = image_tag(post.image.url, alt: "")
   .post-body
     .post-meta
       = link_to post.category.name, category_path(post.category), class: "post-category cat-#{post.category.id}"

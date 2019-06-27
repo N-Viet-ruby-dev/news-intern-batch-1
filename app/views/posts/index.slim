@@ -21,6 +21,7 @@
                     span.post-date
                       = post.updated_at.strftime("%b %d, %Y")
                   h3.post-title
-                    = link_to truncate(post.title), post_path(post)
-    .clearfix.visible-md.visible-lg
-    = paginate @post_results, theme: "twitter-bootstrap-3"
+                    = link_to truncate(post.title, length: 40), post_path(post)
+      .clearfix.visible-md.visible-lg
+      .center style=("margin: 0 auto; width: 50%; margin-right: 480px;")
+        = paginate @post_results, theme: "twitter-bootstrap-3"

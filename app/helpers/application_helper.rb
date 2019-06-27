@@ -14,10 +14,10 @@ module ApplicationHelper
   end
 
   def featured_posts
-    @featured_posts ||= Impression.where(impressionable_type: 'Post').where("created_at >= ? AND created_at <= ?", Date.yesterday, Date.today).group(:impressionable_id).order("count_all DESC").count.first(2)
+    @featured_posts ||= Impression.where(impressionable_type: "Post").where("created_at >= ? AND created_at <= ?", Date.yesterday, Date.today).group(:impressionable_id).order("count_all DESC").count.first(2)
   end
 
   def most_in_week
-    @most_in_week ||= Impression.where(impressionable_type: 'Post').where("created_at >= ? AND created_at <= ?", 7.days.ago, Date.today).group(:impressionable_id).order("count_all DESC").count.first(5)
+    @most_in_week ||= Impression.where(impressionable_type: "Post").where("created_at >= ? AND created_at <= ?", 7.days.ago, Date.today).group(:impressionable_id).order("count_all DESC").count.first(5)
   end
 end

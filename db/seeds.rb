@@ -30,7 +30,7 @@ User.create!(
     password: "password")
 end
 
-50.times do |n|
+100.times do |n|
   Post.create!(
     user_id: "2",
     title: Faker::Lorem.sentence,

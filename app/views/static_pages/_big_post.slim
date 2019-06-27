@@ -8,6 +8,7 @@
         span.post-date
           = post.updated_at.strftime("%b %d, %Y")
           - if post.video.present?
+            | &ensp;
             i.fas.fa-video
       h3.post-title
         = link_to post.title, post_path(post)

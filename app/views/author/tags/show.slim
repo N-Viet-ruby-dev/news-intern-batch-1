@@ -5,8 +5,8 @@ table.table.table-responsive-sm.table-hover.table-outline.mb-0
       th Category
       th Headline
       th Tags
-      th.text-center View
-      th.text-center Show
+      th.text-center Views
+      th.text-center Status
       th.text-center Edit
   tbody
     - @posts.each do |post|
@@ -22,9 +22,14 @@ table.table.table-responsive-sm.table-hover.table-outline.mb-0
             | &ensp;&#35;
             = link_to tag, author_tag_path(tag)
         td.text-center
-          | ...
+          = post.impressionist_count
         td.text-center
-          i.fas.fa-info-circle
+          - if post.public
+            strong.text-success
+              i.fas.fa-check
+          - else
+            strong.text-warning
+              i.fas.fa-spinner
         td.text-center
           = link_to edit_author_post_path post
             i.far.fa-edit

@@ -12,7 +12,7 @@
         - @post_results.each do |post|
             .col-md-3.col-sm-4#recent-post
               .post
-                = link_to post_path(post), class: "post-img" do
+                = link_to post_path(post), style: ("height: 370px;"), class: "post-img" do
                   = image_tag(post.image.url, alt: "")
                 .post-body
                   .post-meta

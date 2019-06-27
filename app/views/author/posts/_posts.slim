@@ -12,7 +12,12 @@ tr
   td.text-center
     = post.impressionist_count
   td.text-center
-    i.fas.fa-info-circle
+    - if post.public
+      strong.text-success
+        i.fas.fa-check
+    - else
+      strong.text-warning
+        i.fas.fa-spinner
   td.text-center
     = link_to edit_author_post_path post
       i.far.fa-edit
